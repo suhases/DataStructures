@@ -57,7 +57,8 @@ public class DoublyLinkedList {
 					temp.setNext(null);
 					temp.setPrev(null);
 					size--;
-					break;
+					break;//exits while loop
+					
 				}
 				temp = temp.getNext();
 			}
