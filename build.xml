@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="DataStructures" basedir="." default="createJar">
+	<path id="DataStructures-classpath">
+	        <fileset dir="lib" includes="*.jar" />
+	</path>
+	
+    <target name="clean" description="Delete all generated files">
+    	<delete includeemptydirs="true">
+    	    <fileset dir="bin" includes="**/*"/>
+    	</delete>
+    </target>
+
+    <target name="compile" description="Compiles and creates class files" depends="clean">
+        <javac srcdir="src" destdir="bin" debug="true" debuglevel="lines,vars,source">
+        	<classpath refid="DataStructures-classpath" />
+        </javac>
+    </target>
+
+    <target name="createJar" description="Creates jar" depends="clean, compile">
+        <jar destfile="lib/DataStructures.jar" basedir="bin"/>
+    </target>
+
+</project>
